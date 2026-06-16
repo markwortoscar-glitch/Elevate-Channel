@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elevate Channel | LinkedIn Channel Growth Review</title>
+    <meta name="description"
+        content="A focused channel growth landing page for vendors, manufacturers, and distributors visiting Elevate Channel from LinkedIn.">
+    <style>
+        :root {
+            --ink: #17212b;
+            --muted: #5f6e7d;
+            --line: #d9e1e8;
+            --surface: #f6f8fb;
+            --white: #ffffff;
+            --blue: #0a66c2;
+            --blue-dark: #084f96;
+            --green: #16856a;
+            --yellow: #f2b705;
+            --red: #c44d58;
+            --shadow: 0 18px 44px rgba(23, 33, 43, 0.12);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--white);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-inner {
+            width: min(1120px, calc(100% - 40px));
+            min-height: 68px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .brand-mark {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 18px;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+            line-height: 1;
+            white-space: nowrap;
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-primary {
+            color: var(--white);
+            background: var(--blue);
+            box-shadow: 0 10px 24px rgba(10, 102, 194, 0.22);
+        }
+
+        .button-primary:hover {
+            background: var(--blue-dark);
+        }
+
+        .button-secondary {
+            color: var(--ink);
+            background: var(--white);
+            border-color: var(--line);
+        }
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 52%, rgba(246, 248, 251, 0.6) 100%),
+                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80");
+            background-position: center;
+            background-size: cover;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-inner {
+            width: min(1120px, calc(100% - 40px));
+            min-height: calc(100vh - 68px);
+            margin: 0 auto;
+            padding: 72px 0 44px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.75fr);
+            align-items: center;
+            gap: 56px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 18px;
+            color: var(--blue-dark);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            background: var(--blue);
+        }
+
+        h1 {
+            max-width: 760px;
+            margin: 0;
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 0.98;
+            letter-spacing: 0;
+        }
+
+        .hero-copy {
+            max-width: 640px;
+            margin: 24px 0 0;
+            color: #3f4e5d;
+            font-size: 20px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 32px 0 0;
+        }
+
+        .hero-proof {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 36px;
+            max-width: 680px;
+        }
+
+        .proof-item {
+            min-height: 96px;
+            padding: 16px;
+            border: 1px solid rgba(217, 225, 232, 0.85);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        .proof-item strong {
+            display: block;
+            font-size: 24px;
+            line-height: 1.1;
+        }
+
+        .proof-item span {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .diagnostic {
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: var(--shadow);
+        }
+
+        .diagnostic h2 {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.15;
+        }
+
+        .diagnostic p {
+            margin: 10px 0 18px;
+            color: var(--muted);
+        }
+
+        .checklist {
+            display: grid;
+            gap: 10px;
+            margin: 0 0 22px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .checklist li {
+            display: grid;
+            grid-template-columns: 24px 1fr;
+            gap: 10px;
+            align-items: start;
+            font-size: 15px;
+        }
+
+        .tick {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            background: var(--green);
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .section {
+            padding: 84px 0;
+        }
+
+        .section-alt {
+            background: var(--surface);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 34px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.05;
+            letter-spacing: 0;
+        }
+
+        .section-heading p {
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            min-height: 220px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--white);
+        }
+
+        .card h3 {
+            margin: 14px 0 8px;
+            font-size: 21px;
+            line-height: 1.2;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius);
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            font-weight: 800;
+            background: var(--blue);
+        }
+
+        .icon.green {
+            background: var(--green);
+        }
+
+        .icon.yellow {
+            color: var(--ink);
+            background: var(--yellow);
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .service {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 14px;
+            min-height: 128px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--white);
+        }
+
+        .service h3 {
+            margin: 0 0 6px;
+            font-size: 19px;
+        }
+
+        .service p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1fr);
+            gap: 48px;
+            align-items: center;
+        }
+
+        .process {
+            display: grid;
+            gap: 14px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 54px 1fr;
+            gap: 16px;
+            align-items: start;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--white);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius);
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            background: var(--ink);
+            font-weight: 800;
+        }
+
+        .step h3 {
+            margin: 0 0 4px;
+            font-size: 18px;
+        }
+
+        .step p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .signal-panel {
+            padding: 24px;
+            border-radius: var(--radius);
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .signal-panel h2 {
+            margin: 0;
+            font-size: 32px;
+            line-height: 1.12;
+        }
+
+        .signal-panel p {
+            margin: 12px 0 20px;
+            color: #d7dee5;
+        }
+
+        .signal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .signal {
+            min-height: 96px;
+            padding: 14px;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .signal strong {
+            display: block;
+            font-size: 22px;
+        }
+
+        .signal span {
+            display: block;
+            margin-top: 5px;
+            color: #d7dee5;
+            font-size: 13px;
+        }
+
+        .cta-band {
+            color: var(--white);
+            background: linear-gradient(135deg, var(--blue-dark), var(--green));
+        }
+
+        .cta-inner {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 58px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .cta-inner h2 {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 44px);
+            line-height: 1.08;
+        }
+
+        .cta-inner p {
+            max-width: 620px;
+            margin: 12px 0 0;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 18px;
+        }
+
+        .footer {
+            padding: 30px 0;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links a:not(.button) {
+                display: none;
+            }
+
+            .hero-inner,
+            .split {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-inner {
+                min-height: auto;
+                padding: 52px 0 44px;
+            }
+
+            .diagnostic {
+                max-width: 620px;
+            }
+
+            .grid-3,
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .nav-inner,
+            .wrap,
+            .hero-inner,
+            .cta-inner,
+            .footer-inner {
+                width: min(100% - 28px, 1120px);
+            }
+
+            .brand span:last-child {
+                max-width: 150px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .nav-links .button {
+                width: auto;
+                min-height: 40px;
+                padding: 0 12px;
+            }
+
+            .hero-proof,
+            .signal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service,
+            .step {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 58px 0;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <nav class="nav" aria-label="Primary navigation">
+            <div class="nav-inner">
+                <a class="brand"
+                    href="https://www.elevatechannel.co.uk/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_landing_page">
+                    <span class="brand-mark">EC</span>
+                    <span>Elevate Channel</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#fit">Fit</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">Process</a>
+                    <a class="button button-primary"
+                        href="https://www.elevatechannel.co.uk/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_landing_page&utm_content=nav_cta">Visit
+                        site</a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-inner">
+                <div>
+                    <p class="eyebrow">For LinkedIn visitors evaluating channel growth</p>
+                    <h1>Turn partner interest into qualified channel opportunities.</h1>
+                    <p class="hero-copy">
+                        If you clicked through from LinkedIn, you are probably looking for a more reliable way to
+                        identify, recruit, onboard, manage, or activate the right channel partners. Elevate Channel
+                        helps vendors, manufacturers, and distributors make that happen.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary"
+                            href="https://www.elevatechannel.co.uk/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_landing_page&utm_content=hero_primary">Explore
+                            Elevate Channel</a>
+                        <a class="button button-secondary" href="#fit">Check if this fits</a>
+                    </div>
+                    <div class="hero-proof" aria-label="Elevate Channel focus areas">
+                        <div class="proof-item">
+                            <strong>6</strong>
+                            <span>Core services across partner growth</span>
+                        </div>
+                        <div class="proof-item">
+                            <strong>B2B</strong>
+                            <span>Built for vendor and distributor teams</span>
+                        </div>
+                        <div class="proof-item">
+                            <strong>EU</strong>
+                            <span>Partner campaigns across key regions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="diagnostic" aria-label="LinkedIn visitor diagnostic">
+                    <h2>Common reasons people arrive here from LinkedIn</h2>
+                    <p>Use this as a quick sense-check before you head to the main site.</p>
+                    <ul class="checklist">
+                        <li><span class="tick">✓</span><span>You need new partner opportunities but do not want broad,
+                                low-fit outreach.</span></li>
+                        <li><span class="tick">✓</span><span>Your current partner base has potential, but too many
+                                partners are inactive.</span></li>
+                        <li><span class="tick">✓</span><span>Your internal sales team needs practical channel support
+                                without adding permanent headcount.</span></li>
+                        <li><span class="tick">✓</span><span>You want partner activity measured by opportunity quality,
+                                not vanity metrics.</span></li>
+                    </ul>
+                    <a class="button button-primary"
+                        href="https://www.elevatechannel.co.uk/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_landing_page&utm_content=diagnostic_cta">See
+                        how Elevate can help</a>
+                </aside>
+            </div>
+        </header>
+
+        <main>
+            <section class="section" id="fit">
+                <div class="wrap">
+                    <div class="section-heading">
+                        <h2>Built for channel teams that need commercial movement, not more noise.</h2>
+                        <p>LinkedIn is good at creating interest. Elevate Channel helps turn that interest into
+                            structured partner activity, better conversations, and clearer sales momentum.</p>
+                    </div>
+                    <div class="grid-3">
+                        <article class="card">
+                            <div class="icon">1</div>
+                            <h3>You need better-fit partners</h3>
+                            <p>Move beyond large contact lists and focus on partners with the right market position,
+                                customer base, sector experience, and sales potential.</p>
+                        </article>
+                        <article class="card">
+                            <div class="icon green">2</div>
+                            <h3>You need partners to activate</h3>
+                            <p>Support partners after recruitment with onboarding, account management, sales enablement,
+                                and regular engagement.</p>
+                        </article>
+                        <article class="card">
+                            <div class="icon yellow">3</div>
+                            <h3>You need measurable opportunity</h3>
+                            <p>Focus partner demand generation around qualified conversations, lead quality, and
+                                practical commercial outcomes.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-alt" id="services">
+                <div class="wrap">
+                    <div class="section-heading">
+                        <h2>What Elevate Channel can support</h2>
+                        <p>Choose one focused project or use Elevate Channel as an extended channel sales acceleration
+                            partner.</p>
+                    </div>
+                    <div class="service-list">
+                        <article class="service">
+                            <div class="icon">ID</div>
+                            <div>
+                                <h3>Partner Identification + Discovery</h3>
+                                <p>Build a focused target list of partner companies with stronger alignment to your
+                                    growth goals.</p>
+                            </div>
+                        </article>
+                        <article class="service">
+                            <div class="icon green">PR</div>
+                            <div>
+                                <h3>Partner Profiling</h3>
+                                <p>Validate the partners most likely to be commercially relevant before outreach begins.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="service">
+                            <div class="icon yellow">RC</div>
+                            <div>
+                                <h3>Partner Recruitment</h3>
+                                <p>Open conversations with the right partners and move them from interest to commitment.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="service">
+                            <div class="icon">ON</div>
+                            <div>
+                                <h3>Partner Onboarding</h3>
+                                <p>Give new partners the structure, tools, and confidence they need to start selling
+                                    effectively.</p>
+                            </div>
+                        </article>
+                        <article class="service">
+                            <div class="icon green">AM</div>
+                            <div>
+                                <h3>Partner Account Management</h3>
+                                <p>Keep partner relationships active with regular touchpoints, support, and commercial
+                                    follow-through.</p>
+                            </div>
+                        </article>
+                        <article class="service">
+                            <div class="icon yellow">DG</div>
+                            <div>
+                                <h3>Partner Demand Generation</h3>
+                                <p>Help partners create end-user demand and turn campaigns into qualified opportunities.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="process">
+                <div class="wrap split">
+                    <div>
+                        <div class="section-heading">
+                            <h2>A practical route from LinkedIn interest to channel growth.</h2>
+                            <p>The fastest path is usually a focused conversation about where your current channel
+                                motion is stuck, then a clear project scope around the highest-value gap.</p>
+                        </div>
+                        <div class="process">
+                            <article class="step">
+                                <div class="step-number">01</div>
+                                <div>
+                                    <h3>Clarify the channel objective</h3>
+                                    <p>New partners, better-fit partners, activation, account management, or partner-led
+                                        demand.</p>
+                                </div>
+                            </article>
+                            <article class="step">
+                                <div class="step-number">02</div>
+                                <div>
+                                    <h3>Map the partner opportunity</h3>
+                                    <p>Define sectors, territories, partner profiles, sales triggers, and qualification
+                                        criteria.</p>
+                                </div>
+                            </article>
+                            <article class="step">
+                                <div class="step-number">03</div>
+                                <div>
+                                    <h3>Launch targeted activity</h3>
+                                    <p>Run structured recruitment, onboarding, account management, or demand generation
+                                        activity.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <aside class="signal-panel">
+                        <h2>What to bring to the first conversation</h2>
+                        <p>A few simple details help turn a first enquiry into a useful channel growth discussion.</p>
+                        <div class="signal-grid">
+                            <div class="signal">
+                                <strong>Markets</strong>
+                                <span>Which countries or regions matter most?</span>
+                            </div>
+                            <div class="signal">
+                                <strong>Partners</strong>
+                                <span>Who are you trying to recruit or activate?</span>
+                            </div>
+                            <div class="signal">
+                                <strong>Offer</strong>
+                                <span>What product, service, or proposition should partners sell?</span>
+                            </div>
+                            <div class="signal">
+                                <strong>Outcome</strong>
+                                <span>What would make the project commercially worthwhile?</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="cta-band">
+                <div class="cta-inner">
+                    <div>
+                        <h2>Ready to see whether Elevate Channel is the right fit?</h2>
+                        <p>Head to the main website for services, case-study context, and the next step for starting a
+                            channel growth conversation.</p>
+                    </div>
+                    <a class="button button-secondary"
+                        href="https://www.elevatechannel.co.uk/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_landing_page&utm_content=final_cta">Continue
+                        to website</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <span>Elevate Channel</span>
+                <span>LinkedIn landing page for channel growth visitors</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
